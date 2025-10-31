@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "clusterName": {
+      "default": "my-postgres-cluster",
+      "title": "clusterName",
+      "type": "string"
+    },
+    "image": {
+      "additionalProperties": true,
+      "properties": {
+        "repository": {
+          "default": "ghcr.io/cloudnative-pg/postgresql",
+          "title": "repository",
+          "type": "string"
+        },
+        "tag": {
+          "default": "16.1",
+          "title": "tag",
+          "type": "string"
+        }
+      },
+      "required": [
+        "repository",
+        "tag"
+      ],
+      "title": "image",
+      "type": "object"
+    },
+    "instances": {
+      "default": 3,
+      "title": "instances",
+      "type": "integer"
+    },
+    "storageSize": {
+      "default": "1Gi",
+      "title": "storageSize",
+      "type": "string"
+    }
+  },
+  "required": [
+    "clusterName",
+    "instances",
+    "storageSize",
+    "image"
+  ],
+  "type": "object"
+}

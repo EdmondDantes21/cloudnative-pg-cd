@@ -1,0 +1,6 @@
+apiVersion: v2
+name: cloudnative-pg-blueprint
+description: A Krateo blueprint for deploying a Cloud-native PG cluster.
+type: application
+version: 0.1.0
+appVersion: "1.22.1"
